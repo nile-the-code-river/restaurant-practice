@@ -3,7 +3,7 @@
 A Project for learning how to architecture right using ASP.NET Core Web API.
 The project is based on a fabulous youtube course, [ASP.NET Core 8 Web API in Clean architecture from scratch](https://www.youtube.com/watch?v=E6sUJWwZLwE&ab_channel=FullstackDev).
 
-## Course Agendas...
+## Course Agenda
 1. REST Web API
 - What is HTTP
 - How does the communication between the server and the client works
@@ -48,10 +48,8 @@ The project is based on a fabulous youtube course, [ASP.NET Core 8 Web API in Cl
 12. Azure Cloud
 - Deploy the API Solution to Azure Using...
 - App Service Plan, Web App Resource, Azure SQL Instance, Blob Storage, and Application Insights
+- Two Different Azure Environments (Dev, Prod)
+![alt text](./_Assets/image-1.png)
 13. CI/CD Pipelines
 - CI/CD Integration
 - Git Branch Policies
-
-### asdf
-Two Different Azure Environments (Dev, Prod)
-![alt text](./_Assets/image-1.png)# restaurant-practice
