@@ -26,10 +26,11 @@ namespace RestaurantsPractice.API.Controllers
 
         [HttpGet]
         [Route("currentDay")]
-        public WeatherForecast GetCurrentDay()
+        public IActionResult GetCurrentDay()
         {
             var result = _weatherForecastService.Get().First();
-            return result;
+            //return StatusCode(400, result);
+            return BadRequest(result);
         }
 
         [HttpPost]
