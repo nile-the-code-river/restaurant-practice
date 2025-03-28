@@ -17,11 +17,25 @@ namespace RestaurantsPractice.API.Controllers
         }
 
         [HttpGet]
-        [Route("example")]
-        public IEnumerable<WeatherForecast> Get()
+        [Route("{take}/example")]
+        public IEnumerable<WeatherForecast> Get([FromQuery] int max, [FromRoute] int take)
         {
             var result = _weatherForecastService.Get();
             return result;
+        }
+
+        [HttpGet]
+        [Route("currentDay")]
+        public WeatherForecast GetCurrentDay()
+        {
+            var result = _weatherForecastService.Get().First();
+            return result;
+        }
+
+        [HttpPost]
+        public string Hello([FromBody] string name)
+        {
+            return $"Hello {name}";
         }
     }
 }

@@ -1,18 +1,23 @@
 @host = http://localhost
 @port = 5207
-@RestaurantsPractice.API_HostAddress = {{host}}:{{port}}
+@RestaurantsPractice.API_HostAddress = https://localhost:7162
 
-GET {{RestaurantsPractice.API_HostAddress}}/weatherforecast/example
-Accept: application/json
-ProjectUrl: {{$projectUrl}}
-Guid:{{$guid}}
-LocalDate: {{$datetime iso8601}}
-Random-int: {{$randomInt}}
+# GET {{RestaurantsPractice.API_HostAddress}}/weatherforecast/23/example?max=123
+# Accept: application/json
+# ProjectUrl: {{$projectUrl}}
+# Guid:{{$guid}}
+# LocalDate: {{$datetime iso8601}}
+# Random-int: {{$randomInt}}
+
+# ###
+
+POST {{RestaurantsPractice.API_HostAddress}}/weatherforecast
+Content-Type: application/json
+
+"Nile Kim"
 
 ###
 
-POST {{RestaurantsPractice.API_HostAddress}}/weatherforecast
-Content-type: application/json
-{
-  "email":"nile.coderiver@gmail.com"
-}
+GET {{RestaurantsPractice.API_HostAddress}}/weatherforecast/currentDay
+
+###
