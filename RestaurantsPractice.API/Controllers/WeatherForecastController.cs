@@ -9,9 +9,11 @@ namespace RestaurantsPractice.API.Controllers
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly WeatherForecastService _weatherForecastService = new();
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,
+            WeatherForecastService weatherForecastService)
         {
             _logger = logger;
+            _weatherForecastService = weatherForecastService;
         }
 
         [HttpGet]
