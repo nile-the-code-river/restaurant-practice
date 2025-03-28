@@ -2,6 +2,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RestaurantsPractice.API.Controllers
 {
+    public class TemperatureRequest
+    {
+        public int MinTempC { get; set; }
+        public int MaxTempC { get; set; }
+    }
+
+
     [ApiController]
     [Route("[controller]")] // api endpoint
     public class WeatherForecastController : ControllerBase
@@ -18,7 +25,7 @@ namespace RestaurantsPractice.API.Controllers
 
         [HttpGet]
         [Route("example")]
-        public IEnumerable<WeatherForecast> Get([FromQuery] int resultNum, [FromQuery] int minTempC, [FromQuery] int maxTempC)
+        public IEnumerable<WeatherForecast> Get(int resultNum, int minTempC, int maxTempC)
         {
             var result = _weatherForecastService.Get(resultNum, minTempC, maxTempC);
             return result;
@@ -40,14 +47,14 @@ namespace RestaurantsPractice.API.Controllers
         }
 
         [HttpPost("generate")]
-        public IActionResult Generate([FromQuery] int resultNum, int minTempC, int maxTempC)
+        public IActionResult Generate([FromQuery]  int resultNum, [FromBody] TemperatureRequest request)
         {
-            if (resultNum < 0 || minTempC > maxTempC)
+            if (resultNum < 0 || request.MinTempC > request.MaxTempC)
             {
-                return BadRequest();
+                return BadRequest("Check your input and try again.");
             }
 
-            var result = _weatherForecastService.Generate(resultNum, minTempC, maxTempC);
+            var result = _weatherForecastService.Generate(resultNum, request);
 
             return Ok(result);
         }

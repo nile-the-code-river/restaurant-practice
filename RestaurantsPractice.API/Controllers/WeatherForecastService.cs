@@ -4,7 +4,7 @@
     {
         IEnumerable<WeatherForecast> Get(int resultNum, int minTempC, int maxTempC);
         IEnumerable<WeatherForecast> GetRandom();
-        IEnumerable<WeatherForecast> Generate(int resultNum, int minTempC, int maxTempC);
+        IEnumerable<WeatherForecast> Generate(int resultNum, TemperatureRequest request);
     }
 
     public class WeatherForecastService : IWeatherForecastService
@@ -37,12 +37,12 @@
             .ToArray();
         }
 
-        public IEnumerable<WeatherForecast> Generate(int resultNum, int minTempC, int maxTempC)
+        public IEnumerable<WeatherForecast> Generate(int resultNum, TemperatureRequest request)
         {
             return Enumerable.Range(1, resultNum).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(minTempC, maxTempC),
+                TemperatureC = Random.Shared.Next(request.MinTempC, request.MaxTempC),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();

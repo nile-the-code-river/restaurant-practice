@@ -26,6 +26,11 @@ GET {{RestaurantsPractice.API_HostAddress}}/weatherforecast/example?resultNum=4&
 
 ###
 
-POST {{RestaurantsPractice.API_HostAddress}}/weatherforecast/generate?resultNum=5&minTempC=10&maxTempC=100
+POST {{RestaurantsPractice.API_HostAddress}}/weatherforecast/generate?resultNum=10
+Content-Type: application/json
+{
+  "MinTempC":-23,
+  "MaxTempC":24
+}
 
 ###
