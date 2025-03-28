@@ -38,5 +38,18 @@ namespace RestaurantsPractice.API.Controllers
         {
             return $"Hello {name}";
         }
+
+        [HttpPost("generate")]
+        public IActionResult Generate([FromQuery] int resultNum, int minTempC, int maxTempC)
+        {
+            if (resultNum < 0 || minTempC > maxTempC)
+            {
+                return BadRequest();
+            }
+
+            var result = _weatherForecastService.Generate(resultNum, minTempC, maxTempC);
+
+            return Ok(result);
+        }
     }
 }

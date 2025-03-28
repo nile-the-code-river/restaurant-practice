@@ -25,3 +25,7 @@ GET {{RestaurantsPractice.API_HostAddress}}/weatherforecast/currentDay
 GET {{RestaurantsPractice.API_HostAddress}}/weatherforecast/example?resultNum=4&minTempC=5&maxTempC=35
 
 ###
+
+POST {{RestaurantsPractice.API_HostAddress}}/weatherforecast/generate?resultNum=5&minTempC=10&maxTempC=100
+
+###
