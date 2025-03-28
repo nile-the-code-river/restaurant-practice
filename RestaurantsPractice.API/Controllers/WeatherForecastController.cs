@@ -3,15 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 namespace RestaurantsPractice.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")] // api endpoint
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly WeatherForecastService _weatherForecastService = new();
 
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
@@ -19,15 +15,11 @@ namespace RestaurantsPractice.API.Controllers
         }
 
         [HttpGet]
+        [Route("example")]
         public IEnumerable<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            var result = _weatherForecastService.Get();
+            return result;
         }
     }
 }
