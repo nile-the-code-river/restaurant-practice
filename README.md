@@ -5,9 +5,15 @@ The project is based on a fabulous youtube course, [ASP.NET Core 8 Web API in Cl
 
 ## Course Agenda
 1. REST Web API
-- What is HTTP
-- How does the communication between the server and the client works
-- What is a REST API
+- HTTP : Protocol that sets out(defines) the rules for exchanging information on computer devices in the WWW network. (Plain text, stateless, cacheable)
+- HTTP Verbs: GET, POST, PUT, PATCH, DELETE
+- https/(protocol)/youtube.com(domain)/results(path)?search_query=webapi(query parameters)
+- Communication between the server and the client :
+    [1] Client => (HTTP Verb, Request Headers, Request Body) => Server\
+    [2] Client <= (Status Code, Response Header, Response Body) <= Server
+- API(Application Programming Interface) : Set of rules (definitions and protocols) that enable one app/system to communicate and cooperate with other.
+- REST(Representational State Transfer) : Stateless(No session required. Already contains all necessary info), Cacheable(Reuse, Improved Performance), Layered System(Independent Modules that can change without affecting others), Uniformed Interface(Consistent), Content Negotiation(Allows clients to specify prefered data format), HATEOAS(Hypermedia As The Engine Of Application State, ??)
+[Good Resource explaining what REST API is](https://wonit.tistory.com/454)
 - Set up local environment
 - Create a web API project
 - Routing & Model Binding
