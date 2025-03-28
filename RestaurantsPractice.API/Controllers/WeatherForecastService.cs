@@ -1,6 +1,11 @@
 ﻿namespace RestaurantsPractice.API.Controllers
 {
-    public class WeatherForecastService
+    public interface IWeatherForecastService
+    {
+        IEnumerable<WeatherForecast> Get();
+    }
+
+    public class WeatherForecastService : IWeatherForecastService
     {
         private static readonly string[] Summaries = new[]
         {
