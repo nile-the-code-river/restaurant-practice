@@ -17,10 +17,10 @@ namespace RestaurantsPractice.API.Controllers
         }
 
         [HttpGet]
-        [Route("{take}/example")]
-        public IEnumerable<WeatherForecast> Get([FromQuery] int max, [FromRoute] int take)
+        [Route("example")]
+        public IEnumerable<WeatherForecast> Get([FromQuery] int resultNum, [FromQuery] int minTempC, [FromQuery] int maxTempC)
         {
-            var result = _weatherForecastService.Get();
+            var result = _weatherForecastService.Get(resultNum, minTempC, maxTempC);
             return result;
         }
 
@@ -28,7 +28,7 @@ namespace RestaurantsPractice.API.Controllers
         [Route("currentDay")]
         public IActionResult GetCurrentDay()
         {
-            var result = _weatherForecastService.Get().First();
+            var result = _weatherForecastService.GetRandom().First();
             //return StatusCode(400, result);
             return BadRequest(result);
         }

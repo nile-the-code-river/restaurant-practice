@@ -2,7 +2,8 @@
 {
     public interface IWeatherForecastService
     {
-        IEnumerable<WeatherForecast> Get();
+        IEnumerable<WeatherForecast> Get(int resultNum, int minTempC, int maxTempC);
+        IEnumerable<WeatherForecast> GetRandom();
     }
 
     public class WeatherForecastService : IWeatherForecastService
@@ -12,7 +13,19 @@
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<WeatherForecast> Get(int resultNum, int minTempC, int maxTempC)
+        {
+            return Enumerable.Range(1, resultNum).Select(index => new WeatherForecast
+            {
+                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+            .Where(x => x.TemperatureC >= minTempC && x.TemperatureC <= maxTempC)
+            .ToArray();
+        }
+
+        public IEnumerable<WeatherForecast> GetRandom()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
