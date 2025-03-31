@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using RestaurantsPractice.API.Controllers;
 using RestaurantsPractice.Infrastructure.Extensions;
 
@@ -9,7 +10,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 
-builder.Services.AddInfrastructure();
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
