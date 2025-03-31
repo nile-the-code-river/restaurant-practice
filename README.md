@@ -1,7 +1,8 @@
 # Restaurant Practice
 
 A Project for learning how to architecture right using ASP.NET Core Web API.
-The project is based on a fabulous youtube course, [ASP.NET Core 8 Web API in Clean architecture from scratch](https://www.youtube.com/watch?v=E6sUJWwZLwE&ab_channel=FullstackDev).
+The project is based on a youtube course, [ASP.NET Core 8 Web API in Clean architecture from scratch](https://www.youtube.com/watch?v=E6sUJWwZLwE&ab_channel=FullstackDev).
+This only covers basic and does not seem completely accurate. For more advanced course, check out the official resource, [Clean Architecture with ASP.NET Core 9](https://www.youtube.com/watch?v=zw-ZtB1BNl8&ab_channel=dotnet) and etc. 
 
 ## Course Agenda
 1. REST Web API
@@ -19,8 +20,16 @@ The project is based on a fabulous youtube course, [ASP.NET Core 8 Web API in Cl
 - Routing & Model Binding
 2. Solution Architecture
 - What is clean architecture
+    [▶ BETTER Source: Clean Architecture with ASP.NET Core 9](https://www.youtube.com/watch?v=zw-ZtB1BNl8&ab_channel=dotnet)
+    = SOLID & Separation of concerns
+    = Benefits: Testability, UI independence, Free to choose/change the database, Flexibility, Transparency
+![alt text](image.png)
+    - Domain/Entity/Core Module: Business Logics
+    - Application Module: Application Logics
+    - Presentation Module: Web API Interface
+    - Infrastructure Module: Connect to Database, Cloud
+
 - How to apply it to the web API project
-![alt text](./_Assets/image.png)
 3. Infrastructure Setup
 - Entity Framework
 - Database Connection
