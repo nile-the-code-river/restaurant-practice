@@ -28,10 +28,19 @@ This only covers basic and does not seem completely accurate. For more advanced 
     - Application Module: Application Logics
     - Presentation Module: Web API Interface
     - Infrastructure Module: Connect to Database, Cloud
-
-- How to apply it to the web API project
 3. Infrastructure Setup
-- Entity Framework
+- Entity Framework => ORM (Code first)
+    - DbContext = Database Instance
+    - DbSet = Table
+    - DbContext
+        => Microsoft.EntityFrameworkCore
+    - Migration
+        => Microsoft.EntityFrameworkCore.Tools
+    - MS SQLServer
+        => Microsoft.EntityFrameworkCore.SqlServer
+    - ETC
+        => SSMS(Microsoft SQL Server Management Studio)
+- LINQ
 - Database Connection
 - Executing Migrations
 4. API Controller
