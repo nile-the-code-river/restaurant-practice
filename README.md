@@ -1,8 +1,8 @@
-# Restaurant Practice
+# Clean Architecture Practice
 
 A Project for learning how to architecture right using ASP.NET Core Web API.
 The project is based on a youtube course, [ASP.NET Core 8 Web API in Clean architecture from scratch](https://www.youtube.com/watch?v=E6sUJWwZLwE&ab_channel=FullstackDev).
-This only covers basic and does not seem completely accurate. For more advanced course, check out the official resource, [Clean Architecture with ASP.NET Core 9](https://www.youtube.com/watch?v=zw-ZtB1BNl8&ab_channel=dotnet) and etc. 
+This only covers basic and does not seem completely accurate. For more advanced course, check out the official resource, [Clean Architecture With .NET 6 And CQRS - Project Setup](https://www.youtube.com/watch?v=tLk4pZZtiDY&list=PLYpjLpq5ZDGstQ5afRz-34o_0dexr1RGa&ab_channel=MilanJovanovi%C4%87) and etc. 
 
 ## Course Agenda
 1. REST Web API
@@ -20,7 +20,7 @@ This only covers basic and does not seem completely accurate. For more advanced 
 - Routing & Model Binding
 2. Solution Architecture
 - What is clean architecture
-    [▶ BETTER Source: Clean Architecture with ASP.NET Core 9](https://www.youtube.com/watch?v=zw-ZtB1BNl8&ab_channel=dotnet)
+    [▶ Simple/Better Explanation](https://www.youtube.com/watch?v=TQdLgzVk2T8&ab_channel=MilanJovanovi%C4%87)
     = SOLID & Separation of concerns
     = Benefits: Testability, UI independence, Free to choose/change the database, Flexibility, Transparency
 ![alt text](image.png)
